@@ -15,12 +15,11 @@
     	?>
         	<div class="news">
             	<h3>
-                	<?php echo htmlspecialchars($post['post_title']); ?>
-                	<em>le <?php echo $post['creation_date']; ?></em>
+                	<?= htmlspecialchars($post['post_title']); ?>
+                	<em>le <?= $post['creation_date']; ?></em>
             	</h3>
             	<p>
-                	<?php
-                	echo nl2br(htmlspecialchars($post['post_content']));
+                	<?= nl2br(htmlspecialchars($post['post_content']));
                 	?>
                 	<br />
                 	<em><a href="#">Commentaires</a></em>
