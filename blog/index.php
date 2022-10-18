@@ -1,10 +1,10 @@
 <?php
 
-require('src/model.php');
+require('Model/model.php');
 
 $posts = getPosts();
 
 
 // Indiquez d'utiliser mon homepage.php
-require('templates/homepage.php');
+require('View/homepage.php');
 ?>

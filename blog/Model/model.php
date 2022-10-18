@@ -1,5 +1,17 @@
 <?php 
 
+// Fonction qui nous permet d'éviter de répéter du code
+function bddConnect()
+{
+	try {
+      $database = new PDO('mysql:host=localhost;dbname=p5_mvc_php;charset=utf8', 'root', 'root');
+    	return $database;
+	} catch(Exception $e) {
+    	die('Erreur : '.$e->getMessage());
+	}
+}
+
+
 // Recuperation de tous les posts
 function getPosts() {
 
@@ -75,16 +87,4 @@ function getComments($id) {
    }
 
    return $comments;
-}
-
-
-// Nouvelle fonction qui nous permet d'éviter de répéter du code
-function bddConnect()
-{
-	try {
-      $database = new PDO('mysql:host=localhost;dbname=p5_mvc_php;charset=utf8', 'root', 'root');
-    	return $database;
-	} catch(Exception $e) {
-    	die('Erreur : '.$e->getMessage());
-	}
 }

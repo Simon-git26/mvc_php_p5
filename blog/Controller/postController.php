@@ -1,11 +1,11 @@
 <?php
 // post.php
  
-require('src/model.php');
+require('Model/model.php');
  
 // Vérifie que j'ai bien recu en @param un id
 if (isset($_GET['post_id']) && $_GET['post_id'] > 0) {
-    $identifier = $_GET['post_id'];
+    $id = $_GET['post_id'];
 } else {
     echo 'Erreur : aucun post !!';
  
@@ -16,4 +16,4 @@ if (isset($_GET['post_id']) && $_GET['post_id'] > 0) {
 $post = getPost($id);
 $comments = getComments($id);
 
-require('templates/post.php');
+require('View/post.php');
