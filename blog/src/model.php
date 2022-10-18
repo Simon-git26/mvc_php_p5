@@ -18,7 +18,7 @@ function getPosts() {
       $post = [
          'post_title' => $row['post_title'],
          'post_content' => $row['post_content'],
-         'post_create_date' => $row['post_date_create'],
+         'post_date_create' => $row['post_date_create'],
          // Recuperer l'id du post pour affichage d'un post précis selon son id
          'post_id' => $row['post_id'],
       ];
@@ -36,7 +36,7 @@ function getPost($id) {
    $database = bddConnect();
 
    $statement = $database->prepare(
-      "SELECT post_id, post_title, post_content, DATE_FORMAT(post_date_create, '%d/%m/%Y à %Hh%imin%ss') AS post_date_create FROM posts WHERE id = ?"
+      "SELECT post_id, post_title, post_content, DATE_FORMAT(post_date_create, '%d/%m/%Y à %Hh%imin%ss') AS post_date_create FROM posts WHERE post_id = ?"
    );
    $statement->execute([$id]);
 
