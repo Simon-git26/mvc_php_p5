@@ -16,13 +16,13 @@
         	<div class="news">
             	<h3>
                 	<?= htmlspecialchars($post['post_title']); ?>
-                	<em>le <?= $post['creation_date']; ?></em>
+                	<em>le <?= $post['post_date_create']; ?></em>
             	</h3>
             	<p>
                 	<?= nl2br(htmlspecialchars($post['post_content']));
                 	?>
                 	<br />
-                	<em><a href="#">Commentaires</a></em>
+                	<em><a href="post.php?id=<?= urlencode($post['post_id']) ?>">Commentaires</a></em>
             	</p>
         	</div>
     	<?php

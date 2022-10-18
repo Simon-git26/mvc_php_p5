@@ -18,3 +18,22 @@ ALTER TABLE `posts`
 
 ALTER TABLE `posts`
   MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+/* Table Commentaire */
+CREATE TABLE `comments` (
+    `comment_id` int (11) NOT NULL,
+    `post_id` INT (11) NOT NULL,
+    `comment_user` varchar(255) NOT NULL,
+    `comment_content` text NOT NULL,
+    `comment_date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `comments` (`comment_id`, `post_id`, `comment_user`, `comment_content`, `comment_date`) VALUES
+(1, 1, 'Mathieu', 'Preum\'s', '2022-03-03 13:00:42'),
+(2, 1, 'Sam', 'Quelqu\'un a un avis là-dessus ? Je ne sais pas quoi en penser.', '2022-03-03 13:01:42');
+
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`comment_id`);
+
+ALTER TABLE `comments`
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3
